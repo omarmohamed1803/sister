@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكر لسلمي محمد حسن</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #fbece6;
+            color: #444;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+        h1 {
+            color: #ff7f50;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+        button {
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #ff5733;
+        }
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #ff4757;
+            transform: rotate(-45deg);
+            animation: float 5s infinite ease-in-out;
+        }
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #ff4757;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -25px;
+            left: 0;
+        }
+        .heart:after {
+            left: 25px;
+            top: 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(-45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>شكراً يا سلمى محمد حسن 💖</h1>
+        <p>
+            إلى أجمل أخت في العالم، سلمى محمد حسن،<br>
+            أشكركِ من أعماق قلبي على كونكِ دائمًا بجانبي ودعمي في كل لحظة.<br>
+            وجودكِ في حياتي هو أكبر نعمة، وأنتِ لستِ فقط أختي بل صديقتي وشريكة حياتي.
+        </p>
+        <p>
+            أحبكِ يا أروع أخت! 💕
+        </p>
+        <button onclick="playSong()">شغّل الأغنية</button>
+        <button onclick="pauseSong()">أوقف الأغنية</button>
+    </div>
+    <audio id="song" src="mostafa.aman.okhty.habebty.mp3"></audio/mpeg>
+
+    <script>
+        // تشغيل الأغنية
+        function playSong() {
+            const song = document.getElementById('song');
+            song.play();
+        }
+
+        // إيقاف الأغنية
+        function pauseSong() {
+            const song = document.getElementById('song');
+            song.pause();
+        }
+
+        // إضافة قلوب متحركة
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }, 500);
+    </script>
+</body>
+</html>
